@@ -15,6 +15,7 @@ const vid = document.querySelector('#video');
 const contact = document.querySelector("#contact");
 
 
+// Start Animation
 
 function parallax(element, distance, speed) {
     const item = document.querySelector(element);
@@ -35,7 +36,6 @@ tl.to(".start", {y: "-100%", duration: .8});
 tl.to(".fullPageSlide", {y: "-100%", duration: .5}, "-=.4");
 tl.to(".start, .fullPageSlide", {display: "none"});
 tl.fromTo ('.opac', {opacity: 0}, {opacity: 1, duration: 1.8});
-
 
 const controller = new ScrollMagic.Controller();
 
@@ -89,6 +89,8 @@ const scene5 = new ScrollMagic.Scene({
     .setTween(blackBack)
     .addTo(controller);
 
+
+// Video animation
 const scene6 = new ScrollMagic.Scene({
     duration: 5000,
     triggerElement: products,
@@ -97,7 +99,6 @@ const scene6 = new ScrollMagic.Scene({
     .setPin(products)
     .addTo(controller);
 
-// Video animation
 let accelamount = 0.1;
 let scrollpos = 0;
 let delay = 0;
@@ -112,6 +113,7 @@ setInterval(() => {
     vid.currentTime = scrollpos;
 }, 60);
 
+// Contacts Animation
 const slideMap = TweenMax.to('#map', {left: "60%"});
 const scene7 = new ScrollMagic.Scene({
     duration: 2000,
