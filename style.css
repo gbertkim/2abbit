@@ -1,0 +1,336 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100%;
+    font-family: 'Suranna', serif;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+/* Start Animation */
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.startText {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+}
+.start {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.icons {
+    transform: translateY(100%);
+    height: 5rem;
+}
+.fullPageSlide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFD875;
+    transform: translateY(100%);
+    z-index: 2;
+}
+.hideAnimation {
+    background: black;
+    overflow: hidden;
+}
+.hideAnimation span {
+    transform: translateY(100%);
+    display: inline-block;
+}
+
+
+/* HOMEPAGE */
+#home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* background-color: #F3F0E6; */
+    background-image: url("./img/mountains.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+#homeContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#rabbit img{
+    height: 50vh;
+    width: auto;
+}
+#rabbitText {
+    /* font-family: 'Roboto', sans-serif; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 2rem;
+    z-index: 5;
+}
+#rabbitText a{
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: 300;
+}
+#rabbitText a:hover{
+    color: black;
+}
+#byMiim {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 3vh;
+    margin-right: 3vh;
+    align-items: center;
+}
+#miimLogo {
+    height: 3vh;
+}
+#byMiim span {
+    color: white;
+    font-size: 25px;
+    margin-right: 15px;
+}
+#arrowButton {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10vh;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+}
+#arrowName  {
+    display: none;
+    text-transform: none;
+    font-size: 1.5vw;
+    font-style: italic;
+}
+.arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.chevron {
+    position: absolute;
+    width: 4.2rem;
+    height: 0.67rem;
+    opacity: 0;
+    transform: scale(0.3);
+    animation: move-chevron 3s ease-out infinite;
+}
+.chevron:first-child {
+    animation: move-chevron 3s ease-out 1s infinite;
+}
+.chevron:nth-child(2) {
+    animation: move-chevron 3s ease-out 2s infinite;
+}
+.chevron:before, .chevron:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: white;
+}
+.chevron:before {
+    left: 0;
+    transform: skewY(30deg);
+}
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skewY(-30deg);
+}
+@keyframes move-chevron {
+    25% {
+        opacity: 1;
+   }
+    33.3% {
+        opacity: 1;
+        transform: translateY(2.28rem);
+   }
+    66.6% {
+        opacity: 1;
+        transform: translateY(3.12rem);
+   }
+    100% {
+        opacity: 0;
+        transform: translateY(4.8rem) scale(0.5);
+   }
+}
+
+/* ABOUT */
+#about {
+    position: relative;
+    background-color: #FFD875;
+    min-width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+#about h1 {
+    font-family: 'Playfair Display', serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 10rem;
+}
+.aboutTitle {
+    opacity: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    margin-bottom: 1rem;
+}
+#about div {
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.aboutText {
+    font-family: 'Playfair Display', serif;
+    opacity: 0;
+    font-size: 1.7rem;
+    margin-bottom: 3rem;
+}
+
+/* PRODUCTS */
+#products {
+    position: relative;
+    min-width: 100vw;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+}
+.front{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.front h1 {
+    font-family: inherit;
+    font-size: 6rem;
+    font-weight: lighter;
+    color: white;
+}
+.shop {
+    position: relative;
+    z-index: 1;
+    font-family: inherit;
+    color: black;
+    font-size: 2rem;
+    background-color: #FFD875;
+    padding: .5rem .8rem .8rem .8rem;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+.shop:hover {
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+#video {
+    position: relative;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#contact {
+    position: relative;
+    min-width: 100vw;
+    height: 100vh;
+    background-color: #F3F0E6;
+}
+#contactTitle {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 4rem;
+    z-index: 1;
+}
+#social {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+.listItem {
+    list-style: none;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+}
+#social a {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    text-decoration: none;
+    color: black;
+}
+.contactWrapper {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#map {
+    position: absolute;
+    left: 150%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 80vh;
+}
+.address {
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    margin-bottom: 50px;
+    font-size: 1rem;
+    text-align: center;
+}
