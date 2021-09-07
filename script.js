@@ -15,16 +15,17 @@ const vid = document.querySelector('#video');
 const contact = document.querySelector("#contact");
 
 
+
 // Start Animation
 
-function parallax(element, distance, speed) {
-    const item = document.querySelector(element);
-    item.style.transform = `translateY(${distance * speed}px)`;
-}
+// function parallax(element, distance, speed) {
+//     const item = document.querySelector(element);
+//     item.style.transform = `translateY(${distance * speed}px)`;
+// }
 
-window.addEventListener("scroll", function(){
-    parallax("#home", window.scrollY, .5);
-});
+// window.addEventListener("scroll", function(){
+//     parallax("#home", window.scrollY, .5);
+// });
 
 const tl = gsap.timeline({defaults: {ease: "power1.out"}});
 
@@ -35,7 +36,12 @@ tl.to(".fullPageSlide", {y: "0%", duration: .5, delay: 1});
 tl.to(".start", {y: "-100%", duration: .8});
 tl.to(".fullPageSlide", {y: "-100%", duration: .5}, "-=.4");
 tl.to(".start, .fullPageSlide", {display: "none"});
+tl.add(function (){
+    $("body").removeClass('stop-scrolling');
+})
 tl.fromTo ('.opac', {opacity: 0}, {opacity: 1, duration: 1.8});
+
+
 
 const controller = new ScrollMagic.Controller();
 

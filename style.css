@@ -14,7 +14,12 @@ main {
     height: auto;
     overflow-x: hidden;
 }
+
 /* Start Animation */
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
 .start {
     display: flex;
     justify-content: center;
@@ -105,7 +110,7 @@ main {
     font-size: 3rem;
     font-weight: 300;
 }
-#rabbitText a:hover{
+#rabbitText a:hover, #rabbitText a:focus{
     color: black;
 }
 #byMiim {
@@ -220,7 +225,7 @@ main {
 }
 #about div {
     position: absolute;
-    width: 90%;
+    width: 70%;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
@@ -260,7 +265,7 @@ main {
 .shop {
     position: relative;
     z-index: 1;
-    font-family: inherit;
+    font-family: 'Playfair Display', serif;
     color: black;
     font-size: 2rem;
     background-color: #FFD875;
@@ -268,7 +273,7 @@ main {
     margin-top: 1rem;
     text-decoration: none;
 }
-.shop:hover {
+.shop:hover, .shop:focus {
     background-color: rgb(54, 54, 54);
     color: white;
 }
@@ -279,6 +284,8 @@ main {
     width: 100%;
     object-fit: cover;
 }
+
+/* Contact */
 #contact {
     position: relative;
     min-width: 100vw;
@@ -310,6 +317,9 @@ main {
     text-decoration: none;
     color: black;
 }
+#social a:hover, #social a:focus {
+    color: grey;
+}
 .contactWrapper {
     height: 60%;
     width: 100%;
@@ -333,4 +343,39 @@ main {
     margin-bottom: 50px;
     font-size: 1rem;
     text-align: center;
+}
+
+@media screen and (max-width: 1000px){
+    #rabbit img {
+        margin-bottom: 100px;
+    } 
+}
+
+@media screen and (max-width: 700px){
+    .front h1 {
+        font-size: 4rem;
+    }
+    .shop {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .front h1 {
+        font-size: 2rem;
+    }
+    .shop {
+        font-size: 1rem;
+    }
+    #about h1 {
+        font-size: 3rem;
+    }
+    .aboutTitle {
+        font-size: 3rem;
+        margin-top: 30px;
+    }
+    .aboutText {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
 }
